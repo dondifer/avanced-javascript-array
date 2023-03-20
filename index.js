@@ -111,3 +111,97 @@ console.log(affirm);
 const numerosMult = [39, 2, 4, 25, 62];
 
 console.log(numerosMult.reduce((acc, b) => acc * b, 1));
+
+//EXTRAS
+
+const staff = [
+  {
+    name: "Pepe",
+    role: "The Boss",
+    hobbies: ["leer", "ver pelis"],
+  },
+  {
+    name: "Ana",
+    role: "becaria",
+    hobbies: ["nadar", "bailar"],
+  },
+  {
+    name: "Luis",
+    role: "programador",
+    hobbies: ["dormir", "comprar"],
+  },
+  {
+    name: "Carlos",
+    role: "secretario",
+    hobbies: ["futbol", "queso"],
+  },
+];
+
+console.log(
+  staff.map(
+    (el) =>
+      `${el.name} es ${el.role} le gusta ${el.hobbies.reduce(
+        (acc, b) => acc + " y " + b
+      )} `
+  )
+);
+
+const foodListGood = ["Pizza", "Ramen", "Paella", "Entrecot"];
+const countryFood = ["Italia", "Japón", "Valencia", null];
+
+const elemFood = foodListGood.map((el, index) =>
+  countryFood[index]
+    ? `Como soy de ${countryFood[index]}, amo comer ${el}`
+    : `Aunque no como carne, el ${el} es sabroso`
+);
+console.log(elemFood);
+//Resultado esperado
+/* [
+    'Como soy de Italia, amo comer Pizza',
+    'Como soy de Japón, amo comer Ramen',
+    'Como soy de Valencia, amo comer Paella',
+    'Aunque no como carne, el Entrecot es sabroso'
+   ]
+*/
+
+const inventory = [
+  {
+    name: "Mobile phone",
+    price: 199,
+  },
+  {
+    name: "TV Samsung",
+    price: 459,
+  },
+  {
+    name: "Viaje a cancún",
+    price: 600,
+  },
+  {
+    name: "Mascarilla",
+    price: 1,
+  },
+];
+
+console.log(inventory.filter((el) => el.price > 300).map((item) => item.name));
+/*
+        [
+          'TV Samsung,',
+          'Viaje a Cancún'
+        ]
+      */
+
+const sentenceElements = [
+  "Me",
+  "llamo",
+  "Eusebio",
+  "y",
+  "quiero",
+  "sentir",
+  "la",
+  "fuerza",
+  "con",
+  "javascript",
+];
+
+console.log(sentenceElements.reduce((acc, b) => acc + " " + b));
